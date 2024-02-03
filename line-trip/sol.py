@@ -1,8 +1,14 @@
 for _ in range(int(input())):
     n , x = map(int , input().split())
     lists = list(map(int , input().split()))
-    max_ = (x - lists[-1]) * 2
+    max_ = lists[0]
+    collect = []
     for i in range(1 , n):
-        max_ = max(max_ , lists[i] - lists[i-1])
-    print(max_)
+        diff = lists[i] - lists[i-1]
+        collect.append(diff)
+        max_ = max(max_ , diff)
+    
+  
+    mj =  (x - lists[-1])*2
+    print(max(max_ , mj ))
     
